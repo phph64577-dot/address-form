@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पता भरें</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    .form-box {
+      max-width: 450px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #ccc;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 20px;
+      background: #008000;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="form-box">
+
+  <h2>अपना पता भरें</h2>
+
+  <form id="addressForm">
+
+    <label>नाम</label>
+    <input id="name" type="text" placeholder="अपना नाम लिखें" required>
+
+    <label>मोबाइल नंबर</label>
+    <input id="mobile" type="tel" placeholder="मोबाइल नंबर लिखें" required>
+
+    <label>घर / गाँव का पता</label>
+    <input id="address" type="text" placeholder="घर नंबर, गाँव आदि">
+
+    <label>पोस्ट</label>
+    <input id="post" type="text" placeholder="पोस्ट का नाम">
+
+    <label>थाना</label>
+    <input id="thana" type="text" placeholder="थाना का नाम">
+
+    <label>जिला</label>
+    <input id="district" type="text" placeholder="जिला">
+
+    <label>राज्य</label>
+    <input id="state" type="text" placeholder="राज्य">
+
+    <label>पिनकोड</label>
+    <input id="pincode" type="number" placeholder="6 अंकों का पिनकोड">
+
+    <button type="submit">WhatsApp पर भेजें</button>
+
+  </form>
+
+</div>
+
+<script>
+document.getElementById("addressForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let mobile = document.getElementById("mobile").value;
+  let address = document.getElementById("address").value;
+  let post = document.getElementById("post").value;
+  let thana = document.getElementById("thana").value;
+  let district = document.getElementById("district").value;
+  let state = document.getElementById("state").value;
+  let pincode = document.getElementById("pincode").value;
+
+  let message =
+`📦 नया पता
+
+नाम: ${name}
+मोबाइल: ${mobile}
+घर/गाँव: ${address}
+पोस्ट: ${post}
+थाना: ${thana}
+जिला: ${district}
+राज्य: ${state}
+पिनकोड: ${pincode}`;
+
+  let whatsappUrl =
+    "https://wa.me/?text=" + encodeURIComponent(message);
+
+  window.open(whatsappUrl, "_blank");
+});
+</script>
+
+</body>
+</html>
