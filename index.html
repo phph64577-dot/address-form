@@ -1,127 +1,314 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>पता भरें</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      padding: 20px;
-    }
+<title>Kishan Garments - Wholesale</title>
 
-    .form-box {
-      max-width: 450px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px #ccc;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    h2 {
-      text-align: center;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #222;
+}
 
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: bold;
-    }
+.header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+}
 
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 7px;
-    }
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
 
-    button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 20px;
-      background: #008000;
-      color: white;
-      border: none;
-      border-radius: 7px;
-      font-size: 17px;
-    }
-  </style>
+.header p {
+  margin: 8px 0 0;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+.form-box {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.info {
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #16a34a;
+}
+
+textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 8px;
+  background: #16a34a;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #15803d;
+}
+
+.note {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 10px;
+  color: #666;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-<div class="form-box">
+<div class="header">
+  <h1>Kishan Garments</h1>
+  <p>Direct Manufacturer & Wholesale Supplier</p>
+</div>
 
-  <h2>अपना पता भरें</h2>
+<div class="container">
 
-  <form id="addressForm">
+  <div class="form-box">
 
-    <label>नाम</label>
-    <input id="name" type="text" placeholder="अपना नाम लिखें" required>
+    <h2>ग्राहक अपनी जानकारी भरें</h2>
 
-    <label>मोबाइल नंबर</label>
-    <input id="mobile" type="tel" placeholder="मोबाइल नंबर लिखें" required>
+    <div class="info">
+      कृपया नीचे अपनी सही जानकारी भरें।<br>
+      जानकारी भेजने के बाद हम आपसे संपर्क करेंगे।
+    </div>
 
-    <label>घर / गाँव का पता</label>
-    <input id="address" type="text" placeholder="घर नंबर, गाँव आदि">
+    <form id="customerForm">
 
-    <label>पोस्ट</label>
-    <input id="post" type="text" placeholder="पोस्ट का नाम">
+      <label>आपका नाम *</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="अपना पूरा नाम लिखें"
+        required
+      >
 
-    <label>थाना</label>
-    <input id="thana" type="text" placeholder="थाना का नाम">
+      <label>मोबाइल नंबर *</label>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="10 अंकों का मोबाइल नंबर"
+        maxlength="10"
+        required
+      >
 
-    <label>जिला</label>
-    <input id="district" type="text" placeholder="जिला">
+      <label>पूरा पता *</label>
+      <textarea
+        id="address"
+        placeholder="घर नंबर, गाँव/मोहल्ला आदि"
+        required
+      ></textarea>
 
-    <label>राज्य</label>
-    <input id="state" type="text" placeholder="राज्य">
+      <label>पोस्ट</label>
+      <input
+        type="text"
+        id="post"
+        placeholder="पोस्ट का नाम"
+      >
 
-    <label>पिनकोड</label>
-    <input id="pincode" type="number" placeholder="6 अंकों का पिनकोड">
+      <label>थाना</label>
+      <input
+        type="text"
+        id="thana"
+        placeholder="थाना का नाम"
+      >
 
-    <button type="submit">WhatsApp पर भेजें</button>
+      <label>जिला *</label>
+      <input
+        type="text"
+        id="district"
+        placeholder="अपना जिला"
+        required
+      >
 
-  </form>
+      <label>राज्य *</label>
+      <input
+        type="text"
+        id="state"
+        placeholder="अपना राज्य"
+        required
+      >
+
+      <label>पिनकोड *</label>
+      <input
+        type="tel"
+        id="pincode"
+        placeholder="6 अंकों का पिनकोड"
+        maxlength="6"
+        required
+      >
+
+      <label>कौन-सा सामान चाहिए? *</label>
+      <input
+        type="text"
+        id="product"
+        placeholder="जैसे - कुर्ती, कपड़ा आदि"
+        required
+      >
+
+      <label>कितनी मात्रा चाहिए? *</label>
+      <input
+        type="text"
+        id="quantity"
+        placeholder="जैसे - 50 पीस / 10 दर्जन"
+        required
+      >
+
+      <label>अतिरिक्त जानकारी</label>
+      <textarea
+        id="message"
+        placeholder="अपनी जरूरत या अन्य जानकारी लिखें"
+      ></textarea>
+
+      <button type="submit">
+        WhatsApp पर जानकारी भेजें
+      </button>
+
+      <div class="note">
+        बटन दबाने पर WhatsApp खुलेगा और आपकी जानकारी भेजने के लिए तैयार हो जाएगी।
+      </div>
+
+    </form>
+
+  </div>
 
 </div>
 
+<div class="footer">
+  © 2026 Kishan Garments
+</div>
+
+
 <script>
-document.getElementById("addressForm").addEventListener("submit", function(e) {
+
+document.getElementById("customerForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  let name = document.getElementById("name").value;
-  let mobile = document.getElementById("mobile").value;
-  let address = document.getElementById("address").value;
-  let post = document.getElementById("post").value;
-  let thana = document.getElementById("thana").value;
-  let district = document.getElementById("district").value;
-  let state = document.getElementById("state").value;
-  let pincode = document.getElementById("pincode").value;
+  const name = document.getElementById("name").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const post = document.getElementById("post").value.trim();
+  const thana = document.getElementById("thana").value.trim();
+  const district = document.getElementById("district").value.trim();
+  const state = document.getElementById("state").value.trim();
+  const pincode = document.getElementById("pincode").value.trim();
+  const product = document.getElementById("product").value.trim();
+  const quantity = document.getElementById("quantity").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-  let message =
-`📦 नया पता
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("कृपया सही 10 अंकों का मोबाइल नंबर डालें।");
+    return;
+  }
 
-नाम: ${name}
-मोबाइल: ${mobile}
-घर/गाँव: ${address}
-पोस्ट: ${post}
-थाना: ${thana}
-जिला: ${district}
-राज्य: ${state}
-पिनकोड: ${pincode}`;
+  if (!/^[0-9]{6}$/.test(pincode)) {
+    alert("कृपया सही 6 अंकों का पिनकोड डालें।");
+    return;
+  }
 
-  let whatsappUrl =
-    "https://wa.me/?text=" + encodeURIComponent(message);
+  const whatsappNumber = "919696496075";
+
+  const text =
+`📦 नया ग्राहक
+
+👤 नाम: ${name}
+
+📱 मोबाइल: ${mobile}
+
+🏠 पूरा पता: ${address}
+
+📮 पोस्ट: ${post}
+
+🚔 थाना: ${thana}
+
+📍 जिला: ${district}
+
+🇮🇳 राज्य: ${state}
+
+📌 पिनकोड: ${pincode}
+
+🛍️ सामान: ${product}
+
+🔢 मात्रा: ${quantity}
+
+📝 अतिरिक्त जानकारी: ${message}`;
+
+  const whatsappUrl =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(text);
 
   window.open(whatsappUrl, "_blank");
+
 });
+
 </script>
 
 </body>
